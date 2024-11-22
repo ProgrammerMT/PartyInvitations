@@ -1,0 +1,27 @@
+﻿@model IEnumerable<PartyInvitations.Models.GuestResponse>
+
+<h1>Списък с присъстващи</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Име</th>
+            <th>Имейл</th>
+            <th>Телефон</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var guest in Model.Where(g => g.WillAttend == true))
+        {
+            <tr>
+                <td>@guest.Name</td>
+                <td>@guest.Email</td>
+                <td>@guest.Phone</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="text-align: right; margin-top: 20px;">
+    <a href="@Url.Action("Index", "Home")" class="btn btn-primary">Начална страница</a>
+</div>

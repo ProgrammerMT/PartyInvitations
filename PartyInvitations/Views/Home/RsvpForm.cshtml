@@ -1,0 +1,35 @@
+﻿@model PartyInvitations.Models.GuestResponse
+
+<h1>RSVP за новогодишното парти</h1>
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+}
+
+<form asp-action="RsvpForm" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="email" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="WillAttend">Ще присъствате ли?</label>
+        <select asp-for="WillAttend" class="form-control">
+            <option value="true">Да, ще дойда.</option>
+            <option value="false">Не мога да присъствам.</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Запази</button>
+</form>
+
+<div style="margin-top: 20px;">
+    <a href="@Url.Action("ListResponses", "Home")" class="btn btn-secondary">Списък с присъстващи</a>
+</div>

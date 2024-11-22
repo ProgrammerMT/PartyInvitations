@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Начална страница";
+}
+<div class="text-center">
+    <h2>Заповядайте на нашето коледно парти!</h2>
+    <p>Ще се проведе на 20.12.2021 г. в ресторанта на хотел "........." от 19 часа!</p>
+    <p>Моля, попълнете формата с вашите данни и дали ще присъствате.</p>
+    <a href="@Url.Action("RsvpForm", "Home")" class="btn btn-primary">Попълни RSVP</a>
+    <a href="@Url.Action("ListResponses", "Home")" class="btn btn-secondary">Виж списъка с присъстващи</a>
+</div>
